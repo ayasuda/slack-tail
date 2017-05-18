@@ -28,8 +28,9 @@ var other = `
 `
 
 func TestMessage(t *testing.T) {
-	expected := "foo	bar	Hello world"
-	evt, _ := trimEvent(message_normal)
+	var rtm = RTM{}
+	expected := "bar#foo: Hello world"
+	evt, _ := trimEvent(message_normal, &rtm)
 	actual := evt.toString()
 	if actual != expected {
 		t.Errorf("got %s\nwant %s", actual, expected)

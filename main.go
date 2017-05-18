@@ -80,7 +80,7 @@ func listenWS(ws *websocket.Conn, rtm *RTM) {
 			return
 		}
 
-		event, err := trimEvent(string(msg))
+		event, err := trimEvent(string(msg), rtm)
 		if event.isPrint() {
 			fmt.Printf("%s\r\n", event.toString())
 		}

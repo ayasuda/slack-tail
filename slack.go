@@ -76,7 +76,7 @@ func (rtm *RTM) getWSSUrl() string {
 }
 
 func (rtm *RTM) getUserNameById(id string) string {
-	name := ""
+	name := id
 	for i := range rtm.Users {
 		if rtm.Users[i].Id == id {
 			name = rtm.Users[i].Name
@@ -85,9 +85,13 @@ func (rtm *RTM) getUserNameById(id string) string {
 	return name
 }
 
+func (rtm *RTM) getUserColorById(id string) string {
+	return ""
+}
+
 // func getGroupNameById(repo *dataRepo, id string) {}
 func (rtm *RTM) getChannelNameById(id string) string {
-	name := ""
+	name := id
 	for i := range rtm.Channels {
 		if rtm.Channels[i].Id == id {
 			name = rtm.Channels[i].Name

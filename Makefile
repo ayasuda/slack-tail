@@ -5,6 +5,10 @@ TESTS := $(shell find . -type f -name '*_test.go')
 build:
 	go build -o slack-tail $(SRCS)
 
+.PHONY: run
+run:
+	go run $(SRCS)
+
 .PHONY: test
 test:
 	go test -cover -v $(TESTS) $(SRCS)
